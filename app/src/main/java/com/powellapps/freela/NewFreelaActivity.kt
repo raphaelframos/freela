@@ -2,19 +2,16 @@ package com.powellapps.freela
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.powellapps.freela.adapter.FuncionalityAdapter
+import com.powellapps.freela.adapter.FunctionalityAdapter
 import com.powellapps.freela.model.Functionality
 import kotlinx.android.synthetic.main.activity_new_freela.*
-import java.util.*
 import kotlin.collections.ArrayList
 
-class NewFreelaActivity : AppCompatActivity(), FuncionalityAdapter.ActiveFunctionality {
+class NewFreelaActivity : AppCompatActivity(), FunctionalityAdapter.ActiveFunctionality {
 
-    var adapter = FuncionalityAdapter(emptyList())
+    var adapter = FunctionalityAdapter(emptyList())
     var sum = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {

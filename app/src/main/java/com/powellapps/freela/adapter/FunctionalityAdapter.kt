@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.powellapps.freela.R
 import com.powellapps.freela.model.Functionality
 
-class FuncionalityAdapter(var list : List<Functionality>) :
-    RecyclerView.Adapter<FuncionalityAdapter.ViewHolderFunctionality>() {
+class FunctionalityAdapter(var list : List<Functionality>) :
+    RecyclerView.Adapter<FunctionalityAdapter.ViewHolderFunctionality>() {
 
     var callbackActive : ActiveFunctionality? = null
 
