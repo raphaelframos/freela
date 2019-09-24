@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "23976185016",
+    "firebase_url": "https://freela-7af7d.firebaseio.com",
+    "project_id": "freela-7af7d",
+    "storage_bucket": "freela-7af7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23976185016:android:054307b87bb26d040b384d",
+        "android_client_info": {
+          "package_name": "com.powellapps.freela"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23976185016-grnklhcvgms9h6igcrscfksbnha94bmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.powellapps.freela",
+            "certificate_hash": "7bf94e8431cbf8c09d282762db36c8526efa6c30"
+          }
+        },
+        {
+          "client_id": "23976185016-cajl8otui11nq9g1jrn4umpeglgnafrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD5BRmGVQqOS_JzBM0onavaQLwQdgO-M0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23976185016-cajl8otui11nq9g1jrn4umpeglgnafrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

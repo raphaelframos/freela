@@ -16,13 +16,7 @@ class NewFunctionalityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_functionality)
-        val database = Room.databaseBuilder(
-            this,
-            AppDatabase::class.java,
-            "freela-database").allowMainThreadQueries().build()
-        functionalityDao = database.functionalityDao()
-        var functionality = Functionality("Login", 10.0)
-        functionalityDao.save(functionality)
+
 
     }
 }

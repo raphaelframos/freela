@@ -21,11 +21,48 @@ class NewFreelaActivity : AppCompatActivity(), FunctionalityAdapter.ActiveFuncti
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = adapter
         list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        val f = Functionality("Teste", 25.0)
+
         var functions = ArrayList<Functionality>()
+        /*
+        val f = Functionality("Login com email e senha", 1.0)
+        val f1 = Functionality("Tela de configuração", 10.0)
+        val f2 = Functionality("Tela de configuração 2", 10.0)
+        val f3 = Functionality("Tela de configuração 3", 10.0)
+        val f4 = Functionality("Resumo", 5.0)
+        val f5 = Functionality("Final", 5.0)
+        val f6 = Functionality("Regras de negócio", 10.0)
+        val f7 = Functionality("Customização", 5.0)
+
+        */
+        val f = Functionality("Login com email e senha", 5.0)
+        val f1 = Functionality("Cadastro de multiusuários", 10.0)
+        val f2 = Functionality("Cadastro de objetivos", 5.0)
+        val f3 = Functionality("Tela de configuração 1", 10.0)
+        val f8 = Functionality("Cadastro de fatores", 5.0)
+        val f9 = Functionality("Tela de configuração 2", 10.0)
+        val f10 = Functionality("Cadastro de áreas", 5.0)
+        val f12 = Functionality("Tela de configuração 3", 10.0)
+        val f11 = Functionality("Cadastro de donos do risco", 5.0)
+        val f4 = Functionality("Resumo", 10.0)
+        val f5 = Functionality("Final", 5.0)
+        val f6 = Functionality("Regras de negócio", 15.0)
+        val f7 = Functionality("Customização", 5.0)
+
         functions.add(f)
-        functions.add(f)
-        functions.add(f)
+        functions.add(f1)
+        functions.add(f2)
+        functions.add(f3)
+        functions.add(f4)
+        functions.add(f5)
+        functions.add(f6)
+        functions.add(f7)
+        functions.add(f8)
+        functions.add(f9)
+        functions.add(f10)
+        functions.add(f11)
+        functions.add(f12)
+
+
         adapter.update(functions)
         adapter.callbackActive = this
         showSum()
@@ -42,6 +79,6 @@ class NewFreelaActivity : AppCompatActivity(), FunctionalityAdapter.ActiveFuncti
     }
 
     private fun showSum() {
-        textView_sum.text = "Total: " + sum
+        textView_sum.text = "Total (h): " + sum + " R$ " + (sum*150)
     }
 }
