@@ -7,6 +7,18 @@
     android:orientation="vertical"
     tools:context=".NewFunctionalityActivity">
 
+    <Spinner
+        android:id="@+id/spinner_professionals"
+        android:entries="@array/professional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinner_languages"
+        android:entries="@array/language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
