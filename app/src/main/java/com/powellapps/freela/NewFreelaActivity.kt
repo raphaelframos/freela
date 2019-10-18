@@ -3,19 +3,12 @@ package com.powellapps.freela
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.powellapps.freela.adapter.FunctionalityAdapter
 import com.powellapps.freela.dao.FreelaDao
 import com.powellapps.freela.db.AppDatabase
 import com.powellapps.freela.model.Freela
-import com.powellapps.freela.model.Functionality
 import kotlinx.android.synthetic.main.activity_new_freela.*
-import kotlin.collections.ArrayList
 
 class NewFreelaActivity : AppCompatActivity() {
-
-    private lateinit var freelaDao: FreelaDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +16,30 @@ class NewFreelaActivity : AppCompatActivity() {
 
         button_save_freela.setOnClickListener({
             val name = textInput_name.text.toString()
-
+            val profession = spinner_profession.selectedItem as String
+            val language = spinner_languages.selectedItem as String
+            val hourValue = textInput_hour_value.text.toString()
+            val positionVisibility = spinner_visible.selectedItemPosition
             var freela = Freela()
-            freela.addName(name)
-            AsyncTask.execute({
-                AppDatabase(this).freelaDao().add(freela)
-                finish()
-            })
+            freela.addName(name).addLanguage(language).addProfession(profession).addHourValue(hourValue)
+            if(positionVisibility == 1){
+
+            }
+
+            SaveFreela(freela).execute()
+
         })
 
+
+    }
+
+    inner class SaveFreela(val freela: Freela) : AsyncTask<Void, Void, Void>(){
+
+        override fun doInBackground(vararg params: Void?): Void? {
+            AppDatabase(context = applicationContext).freelaDao().add(freela)
+            finish()
+            return null
+        }
 
     }
 

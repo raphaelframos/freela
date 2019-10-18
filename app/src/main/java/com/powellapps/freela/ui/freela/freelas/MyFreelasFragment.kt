@@ -9,10 +9,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.powellapps.freela.NewFreelaActivity
 
 import com.powellapps.freela.R
 import com.powellapps.freela.db.AppDatabase
+import com.powellapps.freela.model.Freela
 import com.powellapps.freela.utils.GeralUtils
 import kotlinx.android.synthetic.main.fragment_my_freelas.*
 
@@ -20,6 +22,8 @@ import kotlinx.android.synthetic.main.fragment_my_freelas.*
  * A simple [Fragment] subclass.
  */
 class MyFreelasFragment : Fragment() {
+
+    private lateinit var freelas: List<Freela>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +38,13 @@ class MyFreelasFragment : Fragment() {
             startActivity(Intent(activity, NewFreelaActivity::class.java))
         })
 
+        AppDatabase(context!!).freelaDao().list().observe(this, Observer {
+            GeralUtils.show("Teste " + it.size)
+
+        })
+
         AsyncTask.execute({
-            GeralUtils.show("Teste " + AppDatabase(context!!).freelaDao().list().size)
+            GeralUtils.show("Teste " + AppDatabase(context!!).freelaDao().list())
         })
 
     }
