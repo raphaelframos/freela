@@ -1,4 +1,4 @@
-package com.powellapps.freela.ui.freela.freelas
+package com.powellapps.freela.ui.freela.myfreelas
 
 import android.view.LayoutInflater
 import android.view.View

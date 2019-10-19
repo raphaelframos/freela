@@ -3,6 +3,7 @@ package com.powellapps.freela.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.lang.Exception
+import java.util.*
 
 @Entity
 class Freela {
@@ -14,6 +15,7 @@ class Freela {
     var profession = ""
     var language = ""
     var hourValue = 0.0
+    var date : Long = 0
 
     fun isPrivate() : Boolean {
         return publicId.isEmpty()
@@ -50,5 +52,17 @@ class Freela {
         }
 
         return this
+    }
+
+    fun toMap(): HashMap<String, Any> {
+        val map : HashMap<String, Any> = HashMap()
+        map.put("name", name)
+        map.put("hourValue", hourValue)
+        map.put("profession", profession)
+        map.put("language", language)
+        map.put("publicId", publicId)
+        map.put("date", date)
+        return map
+
     }
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/myFreelasFragment"
-        android:name="com.powellapps.freela.ui.freela.freelas.MyFreelasFragment"
+        android:name="com.powellapps.freela.ui.freela.myfreelas.MyFreelasFragment"
         android:label="fragment_my_freelas"
         tools:layout="@layout/fragment_my_freelas" />
     <fragment

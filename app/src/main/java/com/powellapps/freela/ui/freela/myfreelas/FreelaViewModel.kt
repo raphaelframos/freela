@@ -1,9 +1,7 @@
-package com.powellapps.freela.ui.freela.freelas
+package com.powellapps.freela.ui.freela.myfreelas
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.powellapps.freela.db.AppDatabase
 
 class FreelaViewModel(application: Application) : AndroidViewModel(application) {

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/Freela"
-        android:name="com.powellapps.freela.ui.freela.freelas.MyFreelasFragment"
+        android:name="com.powellapps.freela.feed.FeedFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></fragment>
 
