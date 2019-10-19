@@ -36,7 +36,8 @@ class NewFreelaActivity : AppCompatActivity() {
     inner class SaveFreela(val freela: Freela) : AsyncTask<Void, Void, Void>(){
 
         override fun doInBackground(vararg params: Void?): Void? {
-            AppDatabase(context = applicationContext).freelaDao().add(freela)
+            val database = AppDatabase.Database.instance(context = applicationContext)
+            database.freelaDao().add(freela)
             finish()
             return null
         }

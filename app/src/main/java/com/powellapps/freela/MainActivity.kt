@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         if(currentUser != null){
             Toast.makeText(this, "Uai " + currentUser, Toast.LENGTH_LONG).show()
         }else{
-            signIn()
+        //    signIn()
         }
 
     }

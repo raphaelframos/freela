@@ -14,16 +14,17 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun functionalityDao() : FunctionalityDao
     abstract fun freelaDao(): FreelaDao
 
-    companion object {
-        @Volatile private var instance: AppDatabase? = null
-        private val LOCK = Any()
+    object Database{
+        @Volatile
+        private lateinit var database: AppDatabase
 
-        operator fun invoke(context: Context)= instance ?: synchronized(LOCK){
-            instance ?: buildDatabase(context).also { instance = it}
+        fun instance(context: Context) : AppDatabase {
+            synchronized(this){
+                if(::database.isInitialized) return database
+                database = Room.databaseBuilder(context, AppDatabase::class.java, "freela.db").build()
+                return database
+            }
         }
-
-        private fun buildDatabase(context: Context) = Room.databaseBuilder(context,
-            AppDatabase::class.java, "freela.db")
-            .build()
     }
+
 }

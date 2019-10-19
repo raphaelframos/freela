@@ -15,6 +15,10 @@ class Freela {
     var language = ""
     var hourValue = 0.0
 
+    fun isPrivate() : Boolean {
+        return publicId.isEmpty()
+    }
+
     fun addName(name: String): Freela {
         this.name = name
         return this
