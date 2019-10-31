@@ -14,6 +14,7 @@ class Freela {
     var publicId = ""
     var profession = ""
     var language = ""
+    var totalTime = 0
     var hourValue = 0.0
     var date : Long = 0
 

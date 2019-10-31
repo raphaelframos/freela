@@ -8,10 +8,10 @@
     <fragment
         android:id="@+id/myFreelasFragment"
         android:name="com.powellapps.freela.ui.freela.myfreelas.MyFreelasFragment"
-        android:label="fragment_my_freelas"
+        android:label="Meus Freelas"
         tools:layout="@layout/fragment_my_freelas" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.powellapps.freela.ui.notifications.NotificationsFragment"
+        android:name="com.powellapps.freela.feed.FeedFragment"
         android:label="NotificationsFragment" />
 </navigation>

@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.powellapps.freela.funcionality.FuncionalityActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-         */
+
         // Configure Google Sign In 7B:F9:4E:84:31:CB:F8:C0:9D:28:27:62:DB:36:C8:52:6E:FA:6C:30
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        startActivity(Intent(this, TestesActivity::class.java))
+      //  startActivity(Intent(this, FuncionalityActivity::class.java))
      //   signIn()
     }
 

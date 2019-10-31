@@ -35,7 +35,6 @@ class MyFreelasFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         model = ViewModelProviders.of(this).get(FreelaViewModel::class.java)
-
         recyclerView_my_freelas.layoutManager = LinearLayoutManager(context)
         recyclerView_my_freelas.addItemDecoration(
             DividerItemDecoration(
@@ -47,11 +46,9 @@ class MyFreelasFragment : Fragment() {
         })
 
         model.list.observe(this, Observer {
-            recyclerView_my_freelas.adapter = FreelaAdapter(it)
+            recyclerView_my_freelas.adapter = FreelaAdapter(it, activity!!)
 
         })
-
-
     }
 
 
