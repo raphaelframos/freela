@@ -1,4 +1,4 @@
-package com.powellapps.freela.feed
+package com.powellapps.freela.ui.freela.feed
 
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +36,9 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(feed: Feed) {
             itemView.textView_name_user.text = feed.userName
-            itemView.textView_value_hour.text = feed.freela.hourValue.toString()
+            itemView.textView_value.text = feed.freela.hourValue.toString()
             itemView.textView_language.text = feed.freela.language
-            itemView.textView_name_freela.text = feed.freela.name
+            itemView.textView_level.text = feed.freela.name
             itemView.textView_date.text = feed.freela.date.toString()
             Glide.with(itemView)
                 .load(feed.userPhoto)

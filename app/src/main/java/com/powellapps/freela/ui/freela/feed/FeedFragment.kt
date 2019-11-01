@@ -1,4 +1,4 @@
-package com.powellapps.freela.feed
+package com.powellapps.freela.ui.freela.feed
 
 
 import android.os.Bundle
@@ -9,14 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 import com.powellapps.freela.R
 import kotlinx.android.synthetic.main.fragment_feed.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.powellapps.freela.model.Feed
 import com.powellapps.freela.model.Freela
-import com.powellapps.freela.utils.GeralUtils
 
 
 /**
@@ -35,7 +33,6 @@ class FeedFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         recyclerView_feed.layoutManager = LinearLayoutManager(context)
-        recyclerView_feed.addItemDecoration(DividerItemDecoration(context, VERTICAL))
         recyclerView_feed.adapter = adapter
         val db = FirebaseFirestore.getInstance()
         var feed = Feed()
@@ -51,7 +48,9 @@ class FeedFragment : Fragment() {
             var list = arrayListOf<Feed>()
             for ( document in it.result!!.documents){
                 val feed = document.toObject(Feed::class.java)
-                feed?.let { it1 -> list.add(it1) }
+                feed?.let { it1 -> list.add(it1)
+                    list.add(it1)
+                }
             }
 
             adapter.update(list)

@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/myFreelasFragment">
+    app:startDestination="@id/feedFragment">
 
     <fragment
         android:id="@+id/myFreelasFragment"
         android:name="com.powellapps.freela.ui.freela.myfreelas.MyFreelasFragment"
         android:label="Meus Freelas"
         tools:layout="@layout/fragment_my_freelas" />
+
     <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.powellapps.freela.feed.FeedFragment"
-        android:label="NotificationsFragment" />
+        android:id="@+id/feedFragment"
+        android:name="com.powellapps.freela.ui.freela.feed.FeedFragment"
+        tools:layout="@layout/fragment_feed"
+        android:label="Freelances" />
 </navigation>
