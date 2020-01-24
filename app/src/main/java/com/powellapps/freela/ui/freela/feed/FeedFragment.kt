@@ -2,12 +2,10 @@ package com.powellapps.freela.ui.freela.feed
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.powellapps.freela.R

@@ -3,9 +3,13 @@ package com.powellapps.freela
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.material.tabs.TabLayout
 import com.powellapps.freela.dao.FreelaDao
 import com.powellapps.freela.db.AppDatabase
 import com.powellapps.freela.model.Freela
+import com.powellapps.freela.newfreela.NewFreelaFragment
+import com.powellapps.freela.newfreela.NewFunctionalityFragment
+import com.powellapps.freela.utils.GeralUtils
 import kotlinx.android.synthetic.main.activity_new_freela.*
 
 class NewFreelaActivity : AppCompatActivity() {
@@ -14,35 +18,31 @@ class NewFreelaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_freela)
 
-        button_save_freela.setOnClickListener({
-            val name = textInput_name.text.toString()
-            val profession = spinner_profession.selectedItem as String
-            val language = spinner_languages.selectedItem as String
-            val hourValue = textInput_hour_value.text.toString()
-            val positionVisibility = spinner_visible.selectedItemPosition
-            var freela = Freela()
-            freela.addName(name).addLanguage(language).addProfession(profession).addHourValue(hourValue)
-            if(positionVisibility == 1){
+        tabLayout_options.addOnTabSelectedListener(object :
+            TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                if(tab.position == 0){
+                    supportFragmentManager.beginTransaction().replace(R.id.linearLayout_new_freela, NewFreelaFragment()).commitAllowingStateLoss()
+                }else{
+                    supportFragmentManager.beginTransaction().replace(R.id.linearLayout_new_freela, NewFunctionalityFragment()).commitAllowingStateLoss()
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
 
             }
 
-            SaveFreela(freela).execute()
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
 
         })
 
 
-    }
-
-    inner class SaveFreela(val freela: Freela) : AsyncTask<Void, Void, Void>(){
-
-        override fun doInBackground(vararg params: Void?): Void? {
-            val database = AppDatabase.Database.instance(context = applicationContext)
-            database.freelaDao().add(freela)
-            finish()
-            return null
-        }
 
     }
+
+
 
 
 }

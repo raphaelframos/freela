@@ -1,4 +1,4 @@
-package com.powellapps.freela.adapter
+package com.powellapps.freela.ui.freela.functionality
 
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +16,9 @@ class FunctionalityAdapter(var list : List<Functionality>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderFunctionality {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_functionality, parent, false)
-        return ViewHolderFunctionality(view)
+        return ViewHolderFunctionality(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

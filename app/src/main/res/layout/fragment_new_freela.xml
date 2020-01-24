@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newfreela.NewFreelaFragment">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descrição" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_hour_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_hour_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Valor hora" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinner_profession"
+            android:entries="@array/professional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinner_languages"
+            android:entries="@array/language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:entries="@array/visibility"
+            android:id="@+id/spinner_visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            style="@style/ButtonPrimary"
+            android:id="@+id/button_save_freela"
+            android:text="Continuar" />
+    </LinearLayout>
+
+</LinearLayout>

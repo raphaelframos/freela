@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.powellapps.freela.R
-import com.powellapps.freela.adapter.FunctionalityAdapter
+import com.powellapps.freela.ui.freela.functionality.FunctionalityAdapter
 import com.powellapps.freela.model.Functionality
 import kotlinx.android.synthetic.main.activity_funcionality.*
 
@@ -23,7 +23,8 @@ class FuncionalityActivity : AppCompatActivity() {
         funcs.add(Functionality("Teste", 1.1))
         funcs.add(Functionality("Teste", 1.1))
         funcs.add(Functionality("Teste", 1.1))
-        recyclerView_functionalities.adapter = FunctionalityAdapter(funcs)
+        recyclerView_functionalities.adapter =
+            FunctionalityAdapter(funcs)
 
         imageView_send.setOnClickListener({
 

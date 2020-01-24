@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/feedFragment">
+    app:startDestination="@id/functionalityFragment">
 
     <fragment
         android:id="@+id/myFreelasFragment"
@@ -16,4 +16,10 @@
         android:name="com.powellapps.freela.ui.freela.feed.FeedFragment"
         tools:layout="@layout/fragment_feed"
         android:label="Freelances" />
+
+    <fragment
+        android:id="@+id/functionalityFragment"
+        android:name="com.powellapps.freela.ui.freela.functionality.FunctionalityFragment"
+        tools:layout="@layout/fragment_functionality"
+        android:label="Funcionalidades" />
 </navigation>

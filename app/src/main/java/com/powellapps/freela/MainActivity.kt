@@ -19,6 +19,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.powellapps.freela.funcionality.FuncionalityActivity
+import com.powellapps.freela.model.Feed
+import com.powellapps.freela.ui.freela.feed.FeedFragment
+import com.powellapps.freela.ui.freela.functionality.FunctionalityFragment
+import com.powellapps.freela.ui.freela.myfreelas.MyFreelasFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
 
         // Configure Google Sign In 7B:F9:4E:84:31:CB:F8:C0:9D:28:27:62:DB:36:C8:52:6E:FA:6C:30
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
       //  startActivity(Intent(this, FuncionalityActivity::class.java))
      //   signIn()
+
     }
 
     private fun signIn() {
@@ -103,6 +108,38 @@ class MainActivity : AppCompatActivity() {
         //    signIn()
         }
 
+    }
+
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+
+        loadFragment(itemId = item.itemId)
+        true
+    }
+
+    private fun loadFragment(itemId: Int) {
+        val tag = itemId.toString()
+        var fragment = supportFragmentManager.findFragmentByTag(tag) ?: when (itemId) {
+            R.id.navigation_home -> {
+                MyFreelasFragment()
+            }
+            R.id.navigation_dashboard -> {
+                FeedFragment()
+            }
+            R.id.navigation_notifications -> {
+                FunctionalityFragment()
+            }
+            else -> {
+                null
+            }
+        }
+
+        // replace fragment
+        if (fragment != null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.nav_host_fragment, fragment)
+                .commitAllowingStateLoss()
+        }
     }
 
 }

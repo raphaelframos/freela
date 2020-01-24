@@ -8,6 +8,9 @@
     tools:context=".NewFreelaActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@android:color/white"
+        android:id="@+id/tabLayout_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -21,67 +24,17 @@
             android:layout_height="wrap_content"
             android:text="Funcionalidades" />
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resumo" />
+
     </com.google.android.material.tabs.TabLayout>
 
     <LinearLayout
-        android:layout_margin="10dp"
+        android:id="@+id/linearLayout_new_freela"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInput_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nome" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_hour_value"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_languages">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInput_hour_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Valor hora" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Spinner
-            android:layout_marginTop="10dp"
-            android:id="@+id/spinner_profession"
-            android:entries="@array/professional"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:layout_marginTop="10dp"
-            android:id="@+id/spinner_languages"
-            android:entries="@array/language"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Spinner
-            android:layout_marginTop="10dp"
-            android:entries="@array/visibility"
-            android:id="@+id/spinner_visible"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-        <Button
-            android:id="@+id/button_save_freela"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Salvar" />
-    </LinearLayout>
+        android:layout_height="match_parent"></LinearLayout>
 
 </LinearLayout>
